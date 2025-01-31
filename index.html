@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FPS Game with Parkour</title>
+  <style>
+    body { margin: 0; overflow: hidden; font-family: Arial, sans-serif; }
+    #instructions { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 10; }
+    #instructions.hidden { display: none; }
+    #hud { position: absolute; top: 10px; left: 10px; color: white; font-size: 18px; z-index: 20; }
+    #crosshair { position: absolute; top: 50%; left: 50%; width: 10px; height: 10px; background: white; border-radius: 50%; transform: translate(-50%, -50%); }
+    #crosshair.hidden { display: none; }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.155.0/examples/js/controls/PointerLockControls.js"></script>
+</head>
+<body>
+  <div id="instructions">
+    <h1>Click to Start</h1>
+    <p>Move: W/A/S/D, Jump: Space, Slide: Sprint + Crouch, Mantle: Jump Near Ledge</p>
+    <p>Wall Bounce: Jump Near Wall, Shoot: Left-Click, ADS: Right-Click</p>
+  </div>
+  <div id="hud">
+    <p id="ammo">Ammo: 30 / 90</p>
+  </div>
+  <div id="crosshair"></div>
+
+  <!-- Load the Game Logic -->
+  <script src="fpsgamescript.js"></script>
+</body>
+</html>
